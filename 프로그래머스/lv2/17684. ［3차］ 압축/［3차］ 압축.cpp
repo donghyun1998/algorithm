@@ -27,12 +27,7 @@ int getSizeAddString(string s) { // 더할 문자열의 길이를 리턴
         }
         curSize++;
     }
-    // if (curSize == 1) {
-    //     m[s.substr(0, 1)] = ++mSize;
-    //     return 1;
-    // } 
-    // else
-        m[addString] = ++mSize;
+    m[addString] = ++mSize;
     return curSize - 1;
 }
 vector<int> solution(string msg) {
