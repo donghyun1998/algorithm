@@ -5,7 +5,7 @@
 using namespace std;
 string Begin, Target;
 vector<string> Words;
-bool  visit[100] = { false };
+bool  visit[100] = { false, };
 int res = 2147483647;
 
 bool    canTransform(string a, string b) {
