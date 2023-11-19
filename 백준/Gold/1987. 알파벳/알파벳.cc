@@ -9,7 +9,6 @@
 using namespace	std;
 int col, row, res = -1;
 vector<string> board;
-// unordered_set<char> s;
 bool visit[27];
 int dx[4] = {1, 0,-1 ,0};
 int dy[4] = {0, -1, 0 ,1};
@@ -40,6 +39,10 @@ int	main()
 		string input;
 		cin >> input;
 		board.push_back(input);
+	}
+	if (col == 1 && row == 1) {
+		cout << 1;
+		return 0;
 	}
 	dfs(0, 0, 0);
 	cout << res;
