@@ -7,7 +7,7 @@
 #include <cstring>
 
 using namespace	std;
-long long dp[101][10];
+int dp[101][10];
 
 int	main()
 {
@@ -30,7 +30,7 @@ int	main()
 			dp[i][j] %= 1000000000;
 		}
 	}
-	long long res = 0;
+	int res = 0;
 	for (int i = 0; i < 10; i++) {
 		res += dp[N][i];
 		res %= 1000000000;
