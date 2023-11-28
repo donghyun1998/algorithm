@@ -4,28 +4,27 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
-#include <unordered_set>
+#include <set>
 
 using namespace std;
 
 int res = -1;
-unordered_set<int> s;
+set<int> s;
 
-void f2(int num) {
+void f2(int num) { // 제곱수 검사
 	// cout << num << endl;
 	int sqrt_num = sqrt(num);
 	if (sqrt_num * sqrt_num == num)
 		res = max(res, num);
 }
 
-void f(const vector<int>& v) {
+void f(const vector<int>& v) { // 숫자 조합 받아서 int로 만들고 중복 아니면 제곱수 검사함
 	for (int i = 1; i <= v.size(); i++) {
 		int num = 0;
-		for (int j = 0; j < i; j++)
+		for (int j = 0; j < i; j++) {
 			num = num * 10 + v[j];
-		if (s.find(num) == s.end()) {
 			s.insert(num);
-			f2(num);
+			// f2(num);
 		}
 	}
 }
@@ -57,6 +56,11 @@ int main() {
 				}
 			}
 		}
+	}
+	for (auto it = s.rbegin(); it != s.rend(); ++it) {
+		f2(*it);
+		if (res != -1)
+			break ;
 	}
 	cout << res;
 }
